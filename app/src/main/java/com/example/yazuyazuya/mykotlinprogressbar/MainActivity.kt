@@ -25,6 +25,11 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             value += 10
 
+            if (value > 100) {
+                value = 0
+                text.text = "ダウンロード中..."
+            }
+
             // progress
             progressBar.progress = value
 
@@ -42,6 +47,7 @@ class MainActivity : AppCompatActivity() {
             if (value == 100) {
                 text.text = "ダウンロード完了！"
             }
+
         }
 
     }
